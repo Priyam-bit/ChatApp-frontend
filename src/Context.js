@@ -32,7 +32,7 @@ const HandshakeContextProvider = (props) => {
             userVideo.current.srcObject = stream;
             userStream.current = stream;
             //connect user to socket
-            socketRef.current = io.connect('/', {
+            socketRef.current = io.connect('https://agile-chatapp-server.onrender.com', {
                 'sync disconnect on unload': true});
             socketRef.current.on("connect_error", (err) => {
                 console.log(`connect_error due to ${err.message}`);
